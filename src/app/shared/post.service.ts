@@ -11,6 +11,8 @@ import { Post } from "./post.model";
 
 
 export class PostService{
+
+
 private post:  Post[] = [
   {username: 'jludovissie', post:'I am cool'},
   {username: 'happyhannah', post:'I am happy'},
@@ -28,6 +30,6 @@ constructor(){
 addPosts(newPost){
   this.post.push(newPost)
   this.postSub.next(this.post)
-
 }
+
 }

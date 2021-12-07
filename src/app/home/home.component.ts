@@ -12,6 +12,10 @@ import { tap } from 'rxjs/operators';
 export class HomeComponent implements OnInit {
   isShown = false;
   posts : Observable<Post[]>
+  numberLikes = 0;
+ 
+ 
+
 
   constructor(private post: PostService) {
     this.posts = post.post$.pipe(tap(data => {
@@ -27,4 +31,8 @@ export class HomeComponent implements OnInit {
  onSubmit(newPost){
    this.post.addPosts(newPost.value)
  }
+ likedButtonClick(){
+   this.post.likedPost() 
+ }
+ 
 }
