@@ -31,8 +31,5 @@ export class HomeComponent implements OnInit {
  onSubmit(newPost){
    this.post.addPosts(newPost.value)
  }
- likedButtonClick(){
-   this.post.likedPost() 
- }
  
 }
