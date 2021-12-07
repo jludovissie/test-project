@@ -12,12 +12,36 @@ import { SuggestedFriendsComponent } from './suggested-friends/suggested-friends
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './suggested-friends/profile/profile.component';
+import { AppRoutingModule } from './app-routing.module';
+import { DropdownDirective } from './navbar/dropdown.directive';
+import { MainComponent } from './main/main.component';
 
 
 @NgModule({
   // Ensure to export the module to use this wherever required
-  imports: [BrowserModule, FormsModule, BrowserModule, BrowserAnimationsModule, MatToolbarModule, MatMenuModule, MatIconModule, MatCardModule, MatFormFieldModule, MatInputModule],
-  declarations: [AppComponent, HelloComponent , SuggestedFriendsComponent, NavbarComponent, HomeComponent, ProfileComponent],
+  imports: [
+    BrowserModule, 
+    FormsModule, 
+    BrowserModule, 
+    BrowserAnimationsModule, 
+    MatToolbarModule, 
+    MatMenuModule, 
+    MatIconModule, 
+    MatCardModule, 
+    MatFormFieldModule, 
+    MatInputModule,
+    AppRoutingModule],
+
+  declarations: [
+    AppComponent, 
+    HelloComponent , 
+    SuggestedFriendsComponent, 
+    NavbarComponent, 
+    HomeComponent, 
+    ProfileComponent,
+    DropdownDirective,
+    MainComponent],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
