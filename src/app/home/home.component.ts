@@ -3,6 +3,7 @@ import { Post } from '../shared/post.model';
 import { PostService } from '../shared/post.service';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
+import { NumberFormatStyle } from '@angular/common/public_api';
 
 @Component({
   selector: 'app-home',
@@ -11,8 +12,7 @@ import { tap } from 'rxjs/operators';
 })
 export class HomeComponent implements OnInit {
   isShown = false;
-  posts : Observable<Post[]>
-  numberLikes = 0;
+  posts : Observable<Post[]>;
  
  
 
@@ -24,9 +24,7 @@ export class HomeComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.post.likedEmitter.subscribe(count => {
-      this.numberLikes = count;
-    })
+ 
   }
 
   createPost(){
@@ -35,8 +33,10 @@ export class HomeComponent implements OnInit {
  onSubmit(newPost){
    this.post.addPosts(newPost.value)
  }
- onLiked(){
-   this.post.likedEmitter.emit(this.numberLikes + 1);
+ onLiked(i: Number){
+  this.post.likePost(i);
  }
- 
+ onDisliked(){
+   
+ }
 }
