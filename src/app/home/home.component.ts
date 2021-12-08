@@ -23,13 +23,20 @@ export class HomeComponent implements OnInit {
     } ))
    }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.post.likedEmitter.subscribe(count => {
+      this.numberLikes = count;
+    })
+  }
 
   createPost(){
     this.isShown = ! this.isShown;
  }
  onSubmit(newPost){
    this.post.addPosts(newPost.value)
+ }
+ onLiked(){
+   this.post.likedEmitter.emit(this.numberLikes + 1);
  }
  
 }
